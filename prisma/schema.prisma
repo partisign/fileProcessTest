@@ -6,26 +6,3 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
-
-model filedata {
-  file_id          String   @id
-  file_system_name String
-  file_name        String
-  file_ext         String
-  file_mime        String
-  file_size        BigInt
-  file_uploadedAt  DateTime @default(now())
-  file_uploadedBy  String
-  file_updatedBy   String?
-  updatedAt        DateTime
-
-  @@index([file_updatedBy], map: "FileData_file_updatedBy_fkey")
-  @@index([file_uploadedBy], map: "FileData_file_uploadedBy_fkey")
-}
-
-model user {
-  user_id   String   @id @unique(map: "User_user_id_key")
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime
-}

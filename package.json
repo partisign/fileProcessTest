@@ -8,11 +8,13 @@
     "build": "tsc",
     "start": "tsc && node .",
     "dev": "nodemon --watch src --ext ts --exec tsx src/index.ts"
-   },
+  },
   "dependencies": {
     "@prisma/client": "^6.3.1",
+    "@types/cors": "^2.8.17",
     "bcryptjs": "^3.0.1",
     "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
